@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import messagesend from './messagesend';
 import Message from './message';
 import loginRender from './loginRender';
 import moment from 'moment';
@@ -8,7 +7,7 @@ function chatPageRender(newUser) {
     let main = $('main');
     let chatPage = `
       <div class="chat-page">
-        <h2> Welcome To The Party!</h2>
+        <h2 class="welcome"> Welcome To The Party ${newUser.name}</h2>
         <div class="messages">
           <button class="exit">Exit</button>
         </div>
@@ -22,26 +21,22 @@ function chatPageRender(newUser) {
         url: "http://tiny-za-server.herokuapp.com/collections/chatmessages",
         type: "GET",
         success: (data) => {
-            data.forEach(function(data, i, arr) {
-
-                const messageContainer = $('.messages');
-              var message=$(`<p>${moment(data.timestamp).format('MMMM Do YYYY, h:mm:ss a')} ${data.sender}: ${data.body}</p>`);
+          $('.messages').empty();
+          data.forEach(function(data, i, arr) {
+            const messageContainer = $('.messages');
+              let message=$(`<p class="date"> On ${moment(data.timestamp).format('MMMM Do YYYY, h:mm:ss a')} <br>
+                                               ${data.sender}: ${data.body}</p>`);
+              let name=$('.name');
                 messageContainer.prepend(message);
                 if (data.sender === newUser.name) {
-                    message.append($('<button class="delete">Delete</button>'));
+                    message.append($('<button id="delete" class='+data._id+'>Delete</button>'));
                 }
-                $('.delete').on('click', function(e){
-                  const deleteSettings={
+                $('.'+ data._id).on('click', (e) =>{
+                  let target= new Message(data.timestamp, data.name, data.body, data._id);
+                  target.delete();
+                });
 
-                    url:"http://tiny-za-server.herokuapp.com/collections/chatmessages/"+data._id,
-                    type:"DELETE",
-                    success:(data) => {
-                      console.log('message deleted');
-                  $.ajax(deleteSettings);
-                }
-            };
-          });
-        });
+            });
         },
         contentType: 'application/json',
         data: JSON.stringify(this)
@@ -49,10 +44,9 @@ function chatPageRender(newUser) {
     $.ajax(getSettings);
   }
 setInterval(function(){
-  $('.messages').empty();
   getMessages();
-},2000);
-    main.html(chatPage);
+},1000);
+main.html(chatPage);
     $('.exit').on('click', function(e) {
         e.preventDefault();
         location.hash = "";
@@ -67,6 +61,7 @@ setInterval(function(){
         const message = new Message(timestamp, username, body);
         message.send();
         console.log('message sent');
+        $('.message-box').val('');
     });
 
 }

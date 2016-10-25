@@ -25,14 +25,15 @@ Message.prototype.send= function(){
   $.ajax(postSettings);
 
 };
-Message.prototype.delete=function(data,id){
-  const deleteSettings={
-
-    url:"http://tiny-za-server.herokuapp.com/collections/chatmessages/"+id,
+Message.prototype.delete=function(){
+  let id=this._id;
+  let deleteSettings={
+    url:"http://tiny-za-server.herokuapp.com/collections/chatmessages/"+ id,
     type:"DELETE",
-    success:(data) => {
-}
-
+    success: function(data,status,xhr){
+      console.log('message deleted');
+    },
+    error: function(){}
   };
   $.ajax(deleteSettings);
 };

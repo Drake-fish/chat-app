@@ -7,6 +7,8 @@ function loginRender(newUser){
   let homePage= `
   <div class="title">
     <h1>Welcome to Drake Instant Messanger!</h1>
+    <span>Making our customers socially akward since 2016</span>
+    <img class="homepic" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT2yIr_SQQDOv5wEQ85oYsYKB6Or4ONa83D3cxj4IPBsG11L4vaQA">
     <h2>Create a username below to enter</h2>
     <form class="login">
     <input class="username" type="text", val="", placeholder="USERNAME">
