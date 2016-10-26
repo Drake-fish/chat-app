@@ -23,7 +23,7 @@ function chatPageRender(newUser) {
       </div>`;
       function getMessages(){
     const getSettings = {
-        url: "http://tiny-za-server.herokuapp.com/collections/chatmessages",
+        url: "https://tiny-za-server.herokuapp.com/collections/chatmessages",
         type: "GET",
         success: (data) => {
           $('.messages').empty();
