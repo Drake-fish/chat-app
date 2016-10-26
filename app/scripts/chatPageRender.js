@@ -46,14 +46,9 @@ setInterval(function(){
   getMessages();
 },1000);
 main.html(chatPage);
-    $('.exit').on('click', (e) => {
-        e.preventDefault();
-        location.hash = "";
-    });
-
-
 
     $('.submit-message').on('click', (e) =>{
+        e.preventDefault();
         const username = newUser.name;
         const timestamp = new Date();
         const body = $('.message-box').val();

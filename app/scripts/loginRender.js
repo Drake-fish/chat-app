@@ -7,7 +7,7 @@ function loginRender(newUser){
   let homePage= `
   <div class="title">
     <h1>Welcome to Drake Instant Messanger!</h1>
-    <span>Making our customers socially akward since 2016</span>
+    <span>Making our customers socially awkward since 2016</span>
     <img class="homepic" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT2yIr_SQQDOv5wEQ85oYsYKB6Or4ONa83D3cxj4IPBsG11L4vaQA">
     <h2>Create a username below to enter</h2>
     <form class="login">
@@ -22,12 +22,12 @@ function loginRender(newUser){
         const username=$('.username').val();
         newUser.name=username;
         e.preventDefault();
-        location.hash="chat";
-        if(username.length>1){
-        location.hash="chat";
+        if(username===''){
+          location.hash='';
+          alert('You must enter a username!');
       }
       else{
-        alert('You must enter a username!');
+        location.hash='chat';
       }
       });
 }
