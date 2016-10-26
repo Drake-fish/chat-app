@@ -8,6 +8,9 @@ height:37rem;
     margin-top: -17px;
     font-size:2rem;
 }
+.messageContainer{
+  width:50%;
+  position:relative;
 p{
   box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
   margin-left:1rem;
@@ -15,21 +18,42 @@ p{
   padding-right:1rem;
   border:2px solid #1D81D8;
   border-radius:10px;
-  width:75%;
-  word-break: break-all;
+  width:100%;
+  word-break: normal;
   background:rgba(208,228,247,1);
   color:black;
   font-family:'Anton',sans-serif;
 }
+}
 .messages{
   text-align:left;
-  height:31rem;
+  height:26rem;
   overflow:scroll;
+  padding-right:3rem;
 }
 #delete{
-  margin-left:1rem;
+  position:absolute;
+  top:2px;
+  left:94%;
+  color:black;
+}
+::-webkit-input-placeholder {
+ color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+ color: white;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+ color: white;
+}
+
+:-ms-input-placeholder {
+ color: white;
 }
 .type-messages{
+
 
   margin-top:2rem;
   text-align:left;

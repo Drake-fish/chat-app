@@ -29,11 +29,16 @@ function chatPageRender(newUser) {
           $('.messages').empty();
           data.forEach(function(data, i, arr) {
             const messageContainer = $('.messages');
-              let message=$(`<p class="date"> On ${moment(data.timestamp).format('MMMM Do YYYY, h:mm:ss a')} <br>
-                                               ${data.sender} says: ${data.body}</p>`);
+              let message=$(`<div class="messageContainer"><p class="date"> On ${moment(data.timestamp).format('MMMM Do YYYY, h:mm:ss a')} <br>
+                                              <span class="person"> ${data.sender} says:</span>  ${data.body}</p></div>`);
+              let person=$('.person');
+              person.css('color','red');
                 messageContainer.prepend(message);
                 if (data.sender === newUser.name) {
-                    message.append($('<button id="delete" class='+data._id+'>Delete</button>'));
+
+                    message.append($('<input type="button" id="delete" class='+data._id+' value="Delete">'));
+                }else{
+                    message.css('margin-left','19rem');
                 }
                 $('.'+ data._id).on('click', (e) =>{
                   let target= new Message(data.timestamp, data.name, data.body, data._id);
