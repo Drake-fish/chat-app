@@ -1,0 +1,46 @@
+.chat-page {
+  background: linear-gradient(to bottom, #d0e4f7 0%, #73b1e7 24%, #0a77d5 50%, #539fe1 79%, #87bcea 100%);
+  margin-top: 1rem;
+  height: 37rem; }
+
+.welcome {
+  border-bottom: 4px solid black;
+  margin-top: -17px;
+  font-size: 2rem; }
+
+p {
+  box-shadow: 0px 10px 5px -4px rgba(0, 0, 0, 0.75);
+  margin-left: 1rem;
+  display: block;
+  padding-right: 1rem;
+  border: 2px solid #1D81D8;
+  border-radius: 10px;
+  width: 75%;
+  word-break: break-all;
+  background: #d0e4f7;
+  color: black;
+  font-family: 'Anton',sans-serif; }
+
+.messages {
+  text-align: left;
+  height: 31rem;
+  overflow: scroll; }
+
+#delete {
+  margin-left: 1rem; }
+
+.type-messages {
+  margin-top: 2rem;
+  text-align: left; }
+
+.message-box {
+  font-size: 1.3rem;
+  background: linear-gradient(to bottom, #00b7ea 0%, #009ec3 100%);
+  color: white;
+  width: 39rem;
+  padding-bottom: 3rem; }
+
+.submit-message {
+  display: none; }
+
+/*# sourceMappingURL=chatpage.css.map */

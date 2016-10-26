@@ -9,6 +9,7 @@ height:37rem;
     font-size:2rem;
 }
 p{
+  box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
   margin-left:1rem;
   display:block;
   padding-right:1rem;
@@ -23,15 +24,20 @@ p{
 .messages{
   text-align:left;
   height:31rem;
+  overflow:scroll;
 }
 #delete{
   margin-left:1rem;
 }
 .type-messages{
-  margin-top:3rem;
+
+  margin-top:2rem;
   text-align:left;
 }
 .message-box{
+  font-size: 1.3rem;
+  background: linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%);
+  color:white;
   width:39rem;
   padding-bottom:3rem;
 }

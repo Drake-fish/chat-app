@@ -25,8 +25,7 @@ function chatPageRender(newUser) {
           data.forEach(function(data, i, arr) {
             const messageContainer = $('.messages');
               let message=$(`<p class="date"> On ${moment(data.timestamp).format('MMMM Do YYYY, h:mm:ss a')} <br>
-                                               ${data.sender}: ${data.body}</p>`);
-              let name=$('.name');
+                                               ${data.sender} says: ${data.body}</p>`);
                 messageContainer.prepend(message);
                 if (data.sender === newUser.name) {
                     message.append($('<button id="delete" class='+data._id+'>Delete</button>'));
@@ -47,14 +46,14 @@ setInterval(function(){
   getMessages();
 },1000);
 main.html(chatPage);
-    $('.exit').on('click', function(e) {
+    $('.exit').on('click', (e) => {
         e.preventDefault();
         location.hash = "";
     });
 
 
 
-    $('.submit-message').on('click', function() {
+    $('.submit-message').on('click', (e) =>{
         const username = newUser.name;
         const timestamp = new Date();
         const body = $('.message-box').val();

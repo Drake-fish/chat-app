@@ -1,0 +1,27 @@
+body {
+  background: black; }
+
+main {
+  text-align: center;
+  color: white;
+  border: 2px solid white;
+  height: 37rem;
+  margin-left: 25%;
+  margin-right: 25%; }
+  main h1 {
+    margin-bottom: 0; }
+  main .homepic {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2rem; }
+  main .username {
+    height: 2rem;
+    width: 18rem; }
+  main .submit {
+    background: linear-gradient(to bottom, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+    height: 37px;
+    width: 5rem;
+    font-size: 1rem;
+    color: #FFD600; }
+
+/*# sourceMappingURL=home.css.map */
