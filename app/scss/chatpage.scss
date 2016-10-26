@@ -44,3 +44,20 @@ p{
 .submit-message{
   display:none;
 }
+.left-dancing{
+  position: absolute;
+    top: 1rem;
+    left: 1rem;
+    img{
+      height:35rem;
+    }
+}
+.right-dancing{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  img{
+    height:36rem;
+    width:18rem;
+  }
+}

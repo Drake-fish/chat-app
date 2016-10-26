@@ -9,7 +9,12 @@ function chatPageRender(newUser) {
       <div class="chat-page">
         <h2 class="welcome"> Welcome To The Party ${newUser.name}</h2>
         <div class="messages">
-          <button class="exit">Exit</button>
+        </div>
+        <div class="left-dancing">
+        <img src="https://media.giphy.com/media/tnhtmbty3GXfi/giphy.gif">
+        </div>
+        <div class="right-dancing">
+        <img src="https://media.giphy.com/media/l2JHRhAtnJSDNJ2py/giphy.gif">
         </div>
         <form class="type-messages">
           <input type="text", class="message-box", placeholder="type your message here">
